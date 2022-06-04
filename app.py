@@ -1,3 +1,4 @@
+#Unstructured Supplementary Service Data
 from flask import Flask, request
 import africastalking
 import os
@@ -19,8 +20,10 @@ def ussd_callback():
     #ussd logic
     if text == "":
         #main menu
-        response = "CON What would you like to do?\n"
+
+        response = "CON Welcome To Smart Farm Market\n"
         response += "1. Check account details\n"
+
         response += "2. Check phone number\n"
         response += "3. Send me a cool message"
     elif text == "1":
