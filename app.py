@@ -61,45 +61,25 @@ def ussd_callback():
         elif text == "1*3":
             #Finicial Institution Data
             response = "CON Menu\n"
-            response += "Input Finicial Instition Access code \n"  
+            response += "Input Finicial Instition Access code \n" 
+            code = True
         elif text == "2":
         #sub menu English
-        response = "CON Smart Farm a'yimi ra?\n"
-        response += "kirikisi ipe isele 'dyia\n"
-        response += "1. 'Ba amvu yapi vini ori ezo piri "
-        response += "2. 'Ba afa jepiri"
-        response += "3. ..."
-    
+            response = "CON Smart Farm a'yimi ra?\n"
+            response += "kirikisi ipe isele 'dyia\n"
+            response += "1. 'Ba amvu yapi vini ori ezo piri "
+            response += "2. 'Ba afa jepiri"
+            response += "3. ..."
+        else:
+            response = "END Invalid input. Try again."
 
-    elif text == "2":
-        #sub menu 1
-        response = "END Your phone number is {}".format(phone_number)
-    elif text == "3":
-        try:
-            #sending the sms
-            sms_response = sms.send("Thank you for going through this tutorial", sms_phone_number)
-            print(sms_response)
-        except Exception as e:
-            #show us what went wrong
-            print(f"Houston, we have a problem: {e}")
-    elif text == "1*1":
-        #ussd menus are split using *
-        account_number = "1243324376742"
-        response = "END Your account number is {}".format(account_number)
-    elif text == "1*2":
-        account_balance = "100,000"
-        response = "END Your account balance is USD {}".format(account_balance)
-   
+        return response
     else:
-        response = "END Invalid input. Try again."
-
+        code = False
+        response = "Test Insitituion 1 /n"
+        response += "Users /n"
+        response += "Products /n"
     return response
-else:
-    code = False
-    response = "Test Insitituion 1 /n"
-    response += "Users /n"
-    response += "Products /n"
-    return 
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=os.environ.get("PORT"))
 
