@@ -39,34 +39,37 @@ def ussd_callback():
         #farmer menu
         response = "CON Menu\n"
         response += "1. Market Prices\n"
-        response += "2. Loan Services & Finicial help  \n"
+        response += "2. Loan leed  \n"
         response += "3. Farm Equipment Hire & purchase\n"
         response += "4. Verified Buyers\n"
-    elif text == "1*1":
+        response += "0. Back to home\n"
+    elif text == "1*2":
         #Buyer  menu
         response = "CON Menu\n"
         response += "1. Market Prices\n"
-        response += "2. Loan Services & Finicial help  \n"
-        response += "3. Farm Equipment Hire & purchase\n"
-        response += "4. Verified Buyers\n"
-    elif text == "1*2":
-        #farmer menu
-        response = "CON Menu\n"
-        response += "1. Market Prices\n"
-        response += "2. Loan Services & Finicial help  \n"
-        response += "3. Farm Equipment Hire & purchase\n"
-        response += "4. Back"
+        response += "2. Available Products \n"
+        response += "3. My Account \n"
     elif text == "1*3":
         #Finicial Institution Data
         response = "CON Menu\n"
         response += "Input Finicial Instition Access code \n" 
     elif text == "2":
     #sub menu English
-        response = "CON Smart Farm a'yimi ra?\n"
-        response += "kirikisi ipe isele 'dyia\n"
-        response += "1. 'Ba amvu yapi vini ori ezo piri "
-        response += "2. 'Ba afa jepiri"
-        response += "3. ..."
+        response = "CON Smart Farm ai'mi ra?\n"
+        response += "kirikisi ipe isele 'diyi alea\n"
+        response += "1. 'Ba amvu yapi vini ori ezo piri \n "
+        response += "2. 'Ba afa jepiri \n"
+        response += "3.  Mari esuta \n "
+    elif text == "0":
+        text  = ""
+        #sub menu English
+        response = "CON Smart Farm Welcomes You?\n"
+        response += "Please choose a category.\n"
+        response += "1. Farmer \n"
+        response += "2. Buyers \n"
+        response += "3. Finicial Institution \n"
+        response += "For Finicial institutions, contact helpline for an account"
+        return response
     else:
         response = "END Feature Unavailable. Try again later."
 
