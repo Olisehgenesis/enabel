@@ -22,18 +22,18 @@ def ussd_callback():
     #ussd logic
     if text == "":
         #main menu
-        response = "CON Welcome To Smart Farm Market\n"
+        response = "CON Welcome To Agro-Market Information System Market\n"
         response += "Please select A Language\n"
         response += "1. English\n"
         response += "2. Lugubara \n"
         response += "3. Kiswahili \n"
     elif text == "1":
         #sub menu English
-        response = "CON Smart Farm Welcomes You?\n"
+        response = "CON Agro-Market Information System Welcomes You?\n"
         response += "Please choose a category.\n"
         response += "1. Farmer \n"
         response += "2. Buyers \n"
-        response += "3. Finicial Institution \n"
+        response += "3. General \n"
         response += "4. Help \n"
     #FArmer Menu
     elif text == "1*1":
@@ -44,7 +44,19 @@ def ussd_callback():
         response += "3. Farm Equipment Hire & Purchase\n"
         response += "4. Verified Buyers\n"
         response += "5. My Account \n"
+        response += "6. Other Finicing Leads \n"
         response += "0. Back to home\n"
+    elif text == "1*1*6":
+        response = "CON Finicing Instituitions\n"
+        response += "1. Government \n"
+        response += "2. NGO's (Non Government Organisation)\n"
+    elif text == "1*1*6*1":
+        response = "CON Government\n"
+        response += "1. Emwoga \n"
+    elif text == "1*1*6*2":
+        response = "CON NGOs \n"
+        response += "1. Enabel \n"
+
     elif text == "1*1*2":
         response = "CON Categories\n"
         response += "1. Seed Loan\n"
@@ -68,18 +80,18 @@ def ussd_callback():
         response += "3. My Account \n"
     elif text in ["1*1*1" , "1*2*1"]:
         #market Prices
-        response = "CON Day: Sunday 05/06/2022 \n"
+        response = "END Day: Sunday 05/06/2022 \n"
         response += "1. Arua Main Market \n Cassava 1kg @ Ugsh 3000 || Maize 1kg @ 3500\n"
         response += "2. Yumbe Main Market \n Cassava 1kg @ Ugsh 3100 || Maize 1kg @ 3400\n"
         response += "3. Arua Casava Proccessing Industry \n Cassava 1kg @ Ugsh 3550 || Maize 1kg @ ...\n"
-        response += "00. More"
+
     elif text == "1*3":
         #Finicial Institution Data
         response = "CON Menu\n"
         response += "Input Finicial Instition Access Code \n" 
     elif text == "2":
     #sub menu English
-        response = "CON Smart Farm ai'mi ra?\n"
+        response = "CON Agro-Market Information System ai'mi ra?\n"
         response += "kirikisi ipe isele 'diyi alea\n"
         response += "1. 'Ba amvu yapi vini ori ezo piri \n "
         response += "2. 'Ba afa jepiri \n"
@@ -87,7 +99,7 @@ def ussd_callback():
     elif text == "0":
         text  = ""
         #sub menu English
-        response = "CON Smart Farm Welcomes You?\n"
+        response = "CON Agro-Market Information System Welcomes You?\n"
         response += "Please choose a category.\n"
         response += "1. Farmer \n"
         response += "2. Buyers \n"
