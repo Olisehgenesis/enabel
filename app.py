@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 username = "sandbox"
-api_key = "b218babfda4a32a3fb3731197f2560cf827db70d795171cda810253d19fdb01f"
+api_key = "7fbdf43c5e1adb10199703e845f5c6197917bce4e86a865cf39f2959429fd129"
 africastalking.initialize(username, api_key)
 sms = africastalking.SMS
 code = False
