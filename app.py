@@ -19,7 +19,7 @@ def ussd_callback():
     sms_phone_number = []
     sms_phone_number.append(phone_number)
     #ussd logic
-    if text == "0":
+    if text == "":
         #main menu
         response = "CON Welcome To Smart Farm Market\n"
         response += "Please select A Language\n"
