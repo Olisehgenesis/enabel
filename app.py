@@ -18,6 +18,7 @@ def ussd_callback():
     text = request.values.get("text", "default")
     sms_phone_number = []
     sms_phone_number.append(phone_number)
+
     #ussd logic
     if text == "":
         #main menu
@@ -33,15 +34,31 @@ def ussd_callback():
         response += "1. Farmer \n"
         response += "2. Buyers \n"
         response += "3. Finicial Institution \n"
-        response += "For Finicial institutions, contact helpline for an account"
+        response += "4. Help \n"
     #FArmer Menu
     elif text == "1*1":
         #farmer menu
         response = "CON Menu\n"
         response += "1. Market Prices\n"
         response += "2. Loan leed  \n"
-        response += "3. Farm Equipment Hire & purchase\n"
+        response += "3. Farm Equipment Hire & Purchase\n"
         response += "4. Verified Buyers\n"
+        response += "5. My Account \n"
+        response += "0. Back to home\n"
+    elif text == "1*1*2":
+        response = "CON Categories\n"
+        response += "1. Seed Loan\n"
+        response += "2. Equipment Loan\n"
+        response += "0. Back to home\n"
+    elif text == "1*1*2*1":
+        response = "CON Available Sources\n"
+        response += "1. Centenary Bank\n"
+        response += "2.Tellego Development Farmer\n"
+        response += "2. Equity Bank\n"
+        response += "0. Back to home\n"
+    elif text == "1*1*2*1*1":
+        response = "CON Loaning Rates\n"
+        response += "1.Seed Loan 2% per Month\n"
         response += "0. Back to home\n"
     elif text == "1*2":
         #Buyer  menu
@@ -49,10 +66,17 @@ def ussd_callback():
         response += "1. Market Prices\n"
         response += "2. Available Products \n"
         response += "3. My Account \n"
+    elif text in ["1*1*1" , "1*2*1"]:
+        #market Prices
+        response = "CON Day: Sunday 05/06/2022 \n"
+        response += "1. Arua Main Market \n Cassava 1kg @ Ugsh 3000 || Maize 1kg @ 3500\n"
+        response += "2. Yumbe Main Market \n Cassava 1kg @ Ugsh 3100 || Maize 1kg @ 3400\n"
+        response += "3. Arua Casava Proccessing Industry \n Cassava 1kg @ Ugsh 3550 || Maize 1kg @ ...\n"
+        response += "00. More"
     elif text == "1*3":
         #Finicial Institution Data
         response = "CON Menu\n"
-        response += "Input Finicial Instition Access code \n" 
+        response += "Input Finicial Instition Access Code \n" 
     elif text == "2":
     #sub menu English
         response = "CON Smart Farm ai'mi ra?\n"
@@ -71,8 +95,13 @@ def ussd_callback():
         response += "For Finicial institutions, contact helpline for an account"
         return response
     else:
-        response = "END Feature Unavailable. Try again later."
-
+        if "1*3*" in text:
+            response = "CON Innovations Uganda "
+            response += "1. Add a service\n"
+            response += "2. Clients\n"
+            response += "2. Request for Finicial Data \n"
+        else:
+            response = "END Feature Unavailable. Try again later."
     return response
 if __name__ == "__main__":
     app.run(host="0.0.0.0", port=os.environ.get("PORT"))
