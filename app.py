@@ -22,14 +22,14 @@ def ussd_callback():
     #ussd logic
     if text == "":
         #main menu
-        response = "CON Welcome To Agro-Market Information System Market\n"
+        response = "CON Welcome To Smart Farm Information System \n"
         response += "Please select A Language\n"
         response += "1. English\n"
         response += "2. Lugubara \n"
         response += "3. Kiswahili \n"
     elif text == "1":
         #sub menu English
-        response = "CON Agro-Market Information System Welcomes You?\n"
+        response = "CON Smart Farm System Welcomes You?\n"
         response += "Please choose a category.\n"
         response += "1. Farmer \n"
         response += "2. Buyers \n"
